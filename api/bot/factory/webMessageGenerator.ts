@@ -17,7 +17,7 @@ export default class WebMessageGenerator implements IMessageGenerator {
         };
     }
 
-    createQuickReplies(title: string, options: QuickReply[]): object[] {
+    createQuickReplies(title: string, options: QuickReply[]): object {
         const replies: object[] = [];
 
         options.forEach(option => {
@@ -30,13 +30,13 @@ export default class WebMessageGenerator implements IMessageGenerator {
             replies.push(reply);
         });
 
-        return [{
+        return {
             payload: {
                 message: "quick_reply",
                 text: title,
                 replies: replies
             }
-        }];
+        };
     }
 
     createCard(card: Card): object {

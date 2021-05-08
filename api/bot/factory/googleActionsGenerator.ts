@@ -37,8 +37,8 @@ export default class GoogleActionsGenerator implements IMessageGenerator {
         }
     }
 
-    createQuickReplies(title: string, options: QuickReply[]): object[] {
-        return [{
+    createQuickReplies(title: string, options: QuickReply[]): object {
+        return {
             "payload": {
                 "google": {
                     "expectUserResponse": true,
@@ -54,7 +54,6 @@ export default class GoogleActionsGenerator implements IMessageGenerator {
                     }
                 }
             }
-        },
-        ]
+        };
     }
 }

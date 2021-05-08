@@ -17,7 +17,7 @@ export default class AndroidMessageGenerator implements IMessageGenerator {
         };
     }
 
-    createQuickReplies(title: string, options: QuickReply[]): object[] {
+    createQuickReplies(title: string, options: QuickReply[]): object {
         const replies: object[] = [];
 
         options.forEach(option => {
@@ -30,13 +30,13 @@ export default class AndroidMessageGenerator implements IMessageGenerator {
             replies.push(reply);
         });
 
-        return [{
+        return {
             payload: {
                 type: "quick_reply",
                 text: title,
                 replies: replies
             }
-        }];
+        };
     }
 
     createCard(card: Card): object {

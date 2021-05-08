@@ -16,7 +16,7 @@ export default class FacebookMessageGenerator implements IMessageGenerator {
         };
     }
 
-    createQuickReplies(title: string, options: QuickReply[]): object[] {
+    createQuickReplies(title: string, options: QuickReply[]): object {
         const replies: object[] = [];
 
         options.forEach(option => {
@@ -29,14 +29,14 @@ export default class FacebookMessageGenerator implements IMessageGenerator {
             replies.push(reply);
         });
 
-        return [{
+        return {
             payload: {
                 facebook: {
                     text: title,
                     quick_replies: replies
                 }
             }
-        }];
+        };
     }
 
     createCard(card: Card): object {

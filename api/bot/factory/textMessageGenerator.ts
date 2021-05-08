@@ -25,18 +25,18 @@ export default class TextMessageGenerator implements IMessageGenerator {
             }
         };
     }
-    createQuickReplies(title: string, options: QuickReply[]): object[] {
+    createQuickReplies(title: string, options: QuickReply[]): object {
         let message = title;
 
         options.forEach(option => {
             message += `\n- ${option.title}`;
         });
 
-        return [{
+        return {
             text: {
                 text: [message]
             }
-        }];
+        };
     }
 
     createDateTimePicker(picker: DateTimePicker) {

@@ -67,9 +67,11 @@ export default class Bot {
   
         const options: Array<QuickReply> = [
           new QuickReply(QuickReplyType.TEXT, "Shi", "si"),
-          new QuickReply(QuickReplyType.TEXT, "Ño", "no"),
-          new QuickReply(QuickReplyType.URL, `Amame ❤`, "http://www.nyan.cat/"),
+          new QuickReply(QuickReplyType.TEXT, "no", "no"),
+          new QuickReply(QuickReplyType.URL, `Amame`, "http://www.nyan.cat/"),
         ];
+
         this.response.fulfillmentMessages.push(this.msgGenerator.createQuickReplies("esta es una pregunta, me quieres?", options));
+        console.log("action test executed");
       }
 }

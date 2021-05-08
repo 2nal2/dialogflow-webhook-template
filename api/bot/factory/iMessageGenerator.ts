@@ -4,6 +4,6 @@ import DateTimePicker from "./models/dateTimePicker";
 
 export default interface IMessageGenerator {
     createText(text: string): object;
-    createQuickReplies(title: string, options: QuickReply[]): object[];
+    createQuickReplies(title: string, options: QuickReply[]): object;
     createCard(card: Card): object;
 }
